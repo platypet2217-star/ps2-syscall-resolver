@@ -6,6 +6,13 @@
     "desc_en": "Resets the main Emotion Engine CPU via software.",
     "desc_es": "Reinicia por software el procesador principal Emotion Engine."
   },
+  "0x02": {
+    "name": "SetGsCrt",
+    "args": "s16 interlace, s16 mode, s16 ffmd",
+    "return": "void",
+    "desc_en": "Initializes the Graphics Synthesizer (GS) output video signal mode (PAL/NTSC) and interlace settings.",
+    "desc_es": "Inicializa el modo de señal de video de salida del Sintetizador Gráfico (GS) (PAL/NTSC) y los ajustes de entrelazado."
+  },
   "0x04": {
     "name": "Exit",
     "args": "s32 exit_code",
@@ -13,12 +20,61 @@
     "desc_en": "Terminates the game and returns to the PS2 OSD main menu.",
     "desc_es": "Termina la ejecución del juego y devuelve al usuario al menú de la consola."
   },
+  "0x11": {
+    "name": "RemoveIntcHandler",
+    "args": "s32 intc_id, s32 handler_id",
+    "return": "s32",
+    "desc_en": "Removes a previously registered hardware interrupt handler from the EE Kernel table.",
+    "desc_es": "Elimina un manejador de interrupciones físicas previamente registrado en la tabla del Kernel del EE."
+  },
+  "0x12": {
+    "name": "sceAddDmacHandler",
+    "args": "s32 dma_channel, void* p_handler, s32 arg",
+    "return": "s32",
+    "desc_en": "Registers a Direct Memory Access (DMA) channel callback for high-speed hardware transfers.",
+    "desc_es": "Registra un callback para los canales de transferencia DMA de alta velocidad (VIF/GIF/SIF)."
+  },
+  "0x13": {
+    "name": "RemoveDmacHandler",
+    "args": "s32 dma_channel, s32 handler_id",
+    "return": "s32",
+    "desc_en": "Removes a previously registered Direct Memory Access (DMA) channel handler from the Kernel table.",
+    "desc_es": "Elimina un manejador de canal de Acceso Directo a Memoria (DMA) previamente registrado de la tabla del Kernel."
+  },
+  "0x14": {
+    "name": "_EnableIntc",
+    "args": "s32 intc_id",
+    "return": "s32",
+    "desc_en": "Enables a specific hardware interrupt line within the INTC controller.",
+    "desc_es": "Activa una línea de interrupción por hardware específica dentro del controlador INTC."
+  },
+  "0x15": {
+    "name": "_DisableIntc",
+    "args": "s32 intc_id",
+    "return": "s32",
+    "desc_en": "Disables a specific hardware interrupt line within the INTC controller.",
+    "desc_es": "Desactiva una línea de interrupción por hardware específica dentro del controlador INTC."
+  },
   "0x16": {
     "name": "EnableDmac",
     "args": "s32 channel",
     "return": "s32",
     "desc_en": "Enables a specific DMA controller channel (used extensively by DVD/SIF).",
     "desc_es": "Activa un canal específico del controlador DMA (usado masivamente por el DVD y el bus SIF)."
+  },
+  "0x17": {
+    "name": "_DisableDmac",
+    "args": "s32 dma_channel",
+    "return": "s32",
+    "desc_en": "Disables a specific DMA controller channel to halt background hardware data transfers.",
+    "desc_es": "Desactiva un canal específico del controlador DMA para detener transferencias de datos físicos en segundo plano."
+  },
+  "0xfc": {
+    "name": "sceSetAlarm",
+    "args": "u32 microseconds, void* alarm_callback, void* callback_arg",
+    "return": "s32",
+    "desc_en": "Schedules a hardware interrupt timed alarm within the PS2 Kernel.",
+    "desc_es": "Programa una alarma por interrupción basada en tiempo dentro del Kernel de la PlayStation 2."
   },
   "0x20": {
     "name": "CreateThread",
@@ -131,6 +187,20 @@
     "return": "s32",
     "desc_en": "Flushes Instruction or Data cache (I-Cache/D-Cache) for coherency.",
     "desc_es": "Vaciador de caché de instrucciones o datos (I-Cache/D-Cache) para coherencia."
+  },
+  "0x70": {
+    "name": "GsGetIMR",
+    "args": "void",
+    "return": "u64",
+    "desc_en": "Reads and returns the current value from the GS Interrupt Mask Register.",
+    "desc_es": "Lee y retorna el valor actual del Registro de Máscara de Interrupciones del Sintetizador Gráfico (GS)."
+  },
+  "0x71": {
+    "name": "GsPutIMR",
+    "args": "u64 imr_mask",
+    "return": "u64",
+    "desc_en": "Writes directly to the GS Interrupt Mask Register to toggle video subsystem hardware interrupts.",
+    "desc_es": "Escribe directamente en el Registro de Máscara de Interrupciones del GS para alternar interrupciones de hardware del subsistema de video."
   },
   "0x74": {
     "name": "sceSifCheckM_S",
