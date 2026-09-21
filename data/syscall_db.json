@@ -1,0 +1,114 @@
+{
+  "0x2f": {
+    "name": "sceGetThreadId",
+    "args": "void",
+    "return": "s32",
+    "desc_en": "Returns the active thread ID from the Kernel.",
+    "desc_es": "Retorna el ID del hilo de ejecución activo del Kernel."
+  },
+  "0x32": {
+    "name": "sceSleepThread",
+    "args": "void",
+    "return": "s32",
+    "desc_en": "Suspends the current thread voluntarily.",
+    "desc_es": "Suspende el hilo actual voluntariamente."
+  },
+  "0x33": {
+    "name": "sceWakeupThread",
+    "args": "s32 thread_id",
+    "return": "s32",
+    "desc_en": "Wakes up a suspended thread in the scheduler.",
+    "desc_es": "Despierta un hilo suspendido en el planificador."
+  },
+  "0x40": {
+    "name": "sceCreateSema",
+    "args": "void* p_sema_param",
+    "return": "s32",
+    "desc_en": "Creates a new logical synchronization semaphore.",
+    "desc_es": "Crea un nuevo semáforo lógico de sincronización."
+  },
+  "0x41": {
+    "name": "sceDeleteSema",
+    "args": "s32 sema_id",
+    "return": "s32",
+    "desc_en": "Destroys a semaphore and frees its memory slot.",
+    "desc_es": "Destruye un semáforo y libera su ranura de memoria."
+  },
+  "0x42": {
+    "name": "sceSignalSema",
+    "args": "s32 sema_id",
+    "return": "s32",
+    "desc_en": "Increments semaphore count and wakes up waiting threads.",
+    "desc_es": "Incrementa el conteo del semáforo y despierta hilos en espera."
+  },
+  "0x44": {
+    "name": "sceWaitSema",
+    "args": "s32 sema_id",
+    "return": "s32",
+    "desc_en": "Blocks the CPU waiting for the semaphore release.",
+    "desc_es": "Bloquea la CPU esperando la liberación de un semáforo."
+  },
+  "0x45": {
+    "name": "scePollSema",
+    "args": "s32 sema_id",
+    "return": "s32",
+    "desc_en": "Instant non-blocking poll of a semaphore count.",
+    "desc_es": "Sondeo instantáneo no bloqueante del conteo de un semáforo."
+  },
+  "0x4b": {
+    "name": "GetOsdConfigParam",
+    "args": "void* out_buf, u32 type",
+    "return": "s32",
+    "desc_en": "Reads global BIOS/NVRAM parameters (Language, Video Mode).",
+    "desc_es": "Lee los parámetros globales de la BIOS/NVRAM de la consola (Idioma, Región)."
+  },
+  "0x5a": {
+    "name": "sceSifSetRpcQueue",
+    "args": "void* p_queue, s32 thread_id",
+    "return": "void",
+    "desc_en": "Binds an SIF RPC queue structure to a specific thread.",
+    "desc_es": "Asocia una estructura de cola de peticiones RPC del bus SIF a un hilo."
+  },
+  "0x5b": {
+    "name": "sceSifInitRpc",
+    "args": "void",
+    "return": "void",
+    "desc_en": "Initializes low-level SIF RPC client drivers in the BIOS.",
+    "desc_es": "Initializa los controladores del motor RPC SIF en la BIOS."
+  },
+  "0x60": {
+    "name": "scePadInit",
+    "args": "s32 mode",
+    "return": "s32",
+    "desc_en": "Initializes physical gamepad ports within the Kernel.",
+    "desc_es": "Inicializa los puertos físicos de los mandos en el Kernel."
+  },
+  "0x62": {
+    "name": "scePadPortOpen",
+    "args": "s32 port, s32 slot, void* p_pad_area",
+    "return": "s32",
+    "desc_en": "Opens a communication channel for the pad at the specified slot.",
+    "desc_es": "Abre un canal de comunicación de ráfaga para el mando en el slot."
+  },
+  "0x64": {
+    "name": "sceFlushCache",
+    "args": "s32 cache_type",
+    "return": "s32",
+    "desc_en": "Flushes Instruction or Data cache (I-Cache/D-Cache) for coherency.",
+    "desc_es": "Vaciador de caché de instrucciones o datos (I-Cache/D-Cache) para coherencia."
+  },
+  "0x74": {
+    "name": "sceSifCheckM_S",
+    "args": "void",
+    "return": "s32",
+    "desc_en": "Checks if the SIF Master-Slave server channel is available.",
+    "desc_es": "Interroga si el canal de servidores SIF Maestro-Esclavo está disponible."
+  },
+  "0x83": {
+    "name": "sceSifSetM_S",
+    "args": "s32 status",
+    "return": "s32",
+    "desc_en": "Sets the SIF Master-Slave remote server connection status.",
+    "desc_es": "Establece el estado de conexión del servidor remoto SIF con el IOP."
+  }
+}
