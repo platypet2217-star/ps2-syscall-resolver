@@ -1,4 +1,39 @@
 {
+  "0x01": {
+    "name": "ResetEE",
+    "args": "s32 mode",
+    "return": "void",
+    "desc_en": "Resets the main Emotion Engine CPU via software.",
+    "desc_es": "Reinicia por software el procesador principal Emotion Engine."
+  },
+  "0x04": {
+    "name": "Exit",
+    "args": "s32 exit_code",
+    "return": "void",
+    "desc_en": "Terminates the game and returns to the PS2 OSD main menu.",
+    "desc_es": "Termina la ejecución del juego y devuelve al usuario al menú de la consola."
+  },
+  "0x16": {
+    "name": "EnableDmac",
+    "args": "s32 channel",
+    "return": "s32",
+    "desc_en": "Enables a specific DMA controller channel (used extensively by DVD/SIF).",
+    "desc_es": "Activa un canal específico del controlador DMA (usado masivamente por el DVD y el bus SIF)."
+  },
+  "0x20": {
+    "name": "CreateThread",
+    "args": "void* p_thread_param",
+    "return": "s32",
+    "desc_en": "Allocates and registers a new execution thread within the Kernel scheduler.",
+    "desc_es": "Asigna y registra un nuevo hilo de ejecución dentro del planificador del Kernel."
+  },
+  "0x22": {
+    "name": "StartThread",
+    "args": "s32 thread_id, void* args",
+    "return": "s32",
+    "desc_en": "Puts a newly created or paused thread into the execution state.",
+    "desc_es": "Pone en estado de ejecución un hilo de fondo que estaba pausado o recién creado."
+  },
   "0x2f": {
     "name": "sceGetThreadId",
     "args": "void",
